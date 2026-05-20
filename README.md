@@ -1,3 +1,4 @@
+
 # Lumen Lite
 
 **Lumen Lite** is the public, fully offline edition of [Lumen](../ReminderApp). Same beautiful SwiftUI experience — reminders, habits, expenses, widgets, and lock-screen Live Activities — with **no account, no cloud sync, and no AI companion or friends features**.
@@ -7,16 +8,16 @@ Everything stays on your device forever.
 ## Demo
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/909a7b7b-13fb-4572-b059-6b56f48423fd" width="200" alt="Home" />
-  <img src="https://github.com/user-attachments/assets/44be73e0-ad47-4343-a614-325da556fd79" width="200" alt="Reminders" />
-  <img src="https://github.com/user-attachments/assets/efb207ff-aaa8-4282-baf2-e4ce9782be44" width="200" alt="Quick add" />
-  <img src="https://github.com/user-attachments/assets/fa022e9f-947a-4048-8da4-f42435ca3c80" width="200" alt="Habits" />
+  <img src="https://github.com/user-attachments/assets/095e2dbb-f1be-44b0-b077-da167c064fec" width="200" alt="Home" />
+  <img src="https://github.com/user-attachments/assets/0d4e4cc6-cabc-45de-8954-919c1d8357c6" width="200" alt="Reminders" />
+  <img src="https://github.com/user-attachments/assets/7b2ed0a7-ad48-4e38-934b-2e9e7802a86d" width="200" alt="Quick add" />
+  <img src="https://github.com/user-attachments/assets/14939c39-ae3a-46f8-8d24-163d1d0d6949" width="200" alt="Habits" />
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4a466ef2-b863-426a-adbf-d569bc8209b7" width="200" alt="Money" />
-  <img src="https://github.com/user-attachments/assets/93ecbdc9-2bc2-4227-beba-a0d7e471a86c" width="200" alt="Expense tracker" />
-  <img src="https://github.com/user-attachments/assets/c2d02396-7e55-4645-a06b-8d3953619532" width="200" alt="Profile" />
-  <img src="https://github.com/user-attachments/assets/b5ae3c2e-c753-4667-9471-7ee82f198fd5" width="200" alt="Themes" />
+  <img src="https://github.com/user-attachments/assets/12da8d60-31eb-4131-abed-8b6139cc900a" width="200" alt="Money" />
+  <img src="https://github.com/user-attachments/assets/511859b0-f732-4980-af8f-7b66b02ab741" width="200" alt="Expense tracker" />
+  <img src="https://github.com/user-attachments/assets/810f4ef9-e0c2-4139-a838-0ac4e8a7ae22" width="200" alt="Profile" />
+  <img src="https://github.com/user-attachments/assets/5e91abe3-b095-4229-8bad-5eae98fc66fb" width="200" alt="Themes" />
 </p>
 
 ## What's included
