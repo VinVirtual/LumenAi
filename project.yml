@@ -1,0 +1,145 @@
+name: LumenLite
+options:
+  bundleIdPrefix: $(APP_BUNDLE_PREFIX)
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: en
+  groupSortPosition: top
+  generateEmptyDirectories: true
+  createIntermediateGroups: true
+  localPackagesGroup: ""
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    DEVELOPMENT_TEAM: $(APPLE_TEAM_ID)
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    OTHER_SWIFT_FLAGS: -enable-upcoming-feature ExistentialAny
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: -Onone
+    Release:
+      SWIFT_OPTIMIZATION_LEVEL: -O
+      SWIFT_COMPILATION_MODE: wholemodule
+
+configFiles:
+  Debug: Config/Debug.xcconfig
+  Release: Config/Release.xcconfig
+
+packages:
+  DesignSystem:
+    path: Packages/DesignSystem
+    group: ""
+  Core:
+    path: Packages/Core
+    group: ""
+  Reminders:
+    path: Packages/Reminders
+    group: ""
+  Wellness:
+    path: Packages/Wellness
+    group: ""
+  Finance:
+    path: Packages/Finance
+    group: ""
+  Customization:
+    path: Packages/Customization
+    group: ""
+
+targets:
+  LumenLite:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    resources:
+      - path: App/Resources
+        optional: true
+    dependencies:
+      - package: DesignSystem
+      - package: Core
+      - package: Reminders
+      - package: Wellness
+      - package: Finance
+      - package: Customization
+      - target: LumenWidgets
+      - target: LumenIntents
+    settings:
+      base:
+        PRODUCT_NAME: LumenLite
+        PRODUCT_BUNDLE_IDENTIFIER: $(APP_BUNDLE_PREFIX).lumenlite
+        INFOPLIST_FILE: App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/Lumen.entitlements
+        TARGETED_DEVICE_FAMILY: "1"
+        SUPPORTS_MACCATALYST: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0.0"
+
+  LumenWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Widgets
+    dependencies:
+      - package: DesignSystem
+      - package: Core
+      - package: Reminders
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+      - sdk: ActivityKit.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(APP_BUNDLE_PREFIX).lumenlite.widgets
+        INFOPLIST_FILE: Widgets/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Widgets/LumenWidgets.entitlements
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0.0"
+        SKIP_INSTALL: YES
+
+  LumenIntents:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Intents
+    dependencies:
+      - package: Core
+      - package: Reminders
+      - sdk: AppIntents.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(APP_BUNDLE_PREFIX).lumenlite.intents
+        INFOPLIST_FILE: Intents/Info.plist
+        CURRENT_PROJECT_VERSION: "1"
+        MARKETING_VERSION: "1.0.0"
+        SKIP_INSTALL: YES
+
+  LumenTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests/LumenTests
+    dependencies:
+      - target: LumenLite
+      - package: Core
+      - package: Reminders
+
+schemes:
+  LumenLite:
+    build:
+      targets:
+        LumenLite: all
+        LumenWidgets: all
+        LumenIntents: all
+        LumenTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - LumenTests
+    archive:
+      config: Release

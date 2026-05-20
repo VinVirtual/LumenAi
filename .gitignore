@@ -1,0 +1,51 @@
+# Xcode
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# XcodeGen-generated project (regenerate with `xcodegen generate`)
+LumenLite.xcodeproj/
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Packages/*/.build/
+Packages/*/.swiftpm/
+
+# CocoaPods (not used, but ignore just in case)
+Pods/
+
+# Secrets
+Config/Secrets.xcconfig
+.env
+.env.local
+supabase/.env
+
+# Supabase local dev
+supabase/.branches/
+supabase/.temp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Sweetpad / xcode-build-server (machine-specific paths)
+buildServer.json
+*.swp
+*.orig
+
+# Coverage
+*.profraw
+coverage/

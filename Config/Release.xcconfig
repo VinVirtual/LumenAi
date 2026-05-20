@@ -1,0 +1,4 @@
+#include "Secrets.xcconfig"
+#include "Shared.xcconfig"
+
+LUMEN_ENV = release

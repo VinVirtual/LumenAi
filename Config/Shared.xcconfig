@@ -1,0 +1,10 @@
+// Shared build settings for all configurations.
+// Reads values from Secrets.xcconfig (gitignored).
+
+INFOPLIST_KEY_LumenAppGroup = group.$(APP_BUNDLE_PREFIX).shared
+
+APP_GROUP_ID = group.$(APP_BUNDLE_PREFIX).shared
+
+ENABLE_BITCODE = NO
+SWIFT_EMIT_LOC_STRINGS = YES
+GENERATE_INFOPLIST_FILE = NO
